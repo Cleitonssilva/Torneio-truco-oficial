@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneio de Truco AgroSol 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="splashArea">
+    <div class="splash-content">
+        <h1>Torneio de Truco 2025</h1>
+        <button id="mainActionButton" class="btn-splash">Entrar no Sistema</button>
+    </div>
+</section>
+
+<section id="adminArea" class="page-section">
+    <h2>Configuração do Torneio</h2>
+
+    <div class="setup-box">
+        <h3>1. Inserir Participantes</h3>
+        <p>A lista deve estar na <strong>Coluna A</strong> do Excel (1ª linha é ignorada).</p>
+        
+        <textarea id="manualInput" rows="10" placeholder="Aguardando importação..."></textarea>
+        
+        <div class="file-upload">
+            <label for="fileInput" style="cursor:pointer; background:#444; padding:10px; border-radius:5px;">
+                📂 Carregar Excel (.xlsx)
+            </label>
+            <input type="file" id="fileInput" accept=".xlsx, .xls" style="display:none">
+            <span id="fileNameDisplay" style="margin-left:10px; font-size:0.9rem; color:#aaa;"></span>
+        </div>
+    </div>
+
+    <div class="setup-box">
+        <h3>2. Modo de Jogo</h3>
+        <label><input type="radio" name="modo" value="individual" checked> Individual (1x1)</label>
+        <label><input type="radio" name="modo" value="duplas"> Duplas (2x2)</label>
+        <p><small>*No modo Duplas, o sistema formará os times na ordem da lista importada.</small></p>
+    </div>
+
+    <div class="actions">
+        <button id="generateBracketButton" class="btn-primary">Gerar Chaveamento</button>
+        <button onclick="fullReset()" class="btn-danger">Limpar Tudo</button>
+    </div>
+</section>
+
+<section id="bracketArea" class="page-section">
+    <div class="header-nav">
+        <button onclick="fullReset()" class="btn-danger" style="font-size:0.8rem;">🗑️ Reiniciar Torneio</button>
+        <h2>Chaveamento</h2>
+        <button id="viewPodiumButton" style="display:none;">🏆 Ver Pódio</button>
+    </div>
+    
+    <div id="bracketContainer"></div>
+</section>
+
+<section id="podiumArea" class="page-section">
+    <h2>🏆 Pódio Final 🏆</h2>
+
+    <div class="podium-container">
+        <div class="podium-place second">
+            <div class="medal">🥈</div>
+            <div class="name" id="winner2nd">-</div>
+        </div>
+        <div class="podium-place first">
+            <div class="medal">🥇</div>
+            <div class="name" id="winner1st">-</div>
+        </div>
+        <div class="podium-place third">
+            <div class="medal">🥉</div>
+            <div class="name" id="winner3rd">-</div>
+        </div>
+    </div>
+
+    <div class="podium-actions">
+        <button id="backToBracketFromPodium">🔙 Ver Chaves</button>
+        
+        <button id="downloadPodiumButton">📸 Baixar Foto</button>
+        <button onclick="fullReset()" class="btn-danger">Novo Jogo</button>
+    </div>
+</section>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+
+<script src="script.js"></script>
+</body>
+</html>

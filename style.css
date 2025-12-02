@@ -1,0 +1,162 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #111;
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: transform 0.1s;
+}
+button:active { transform: scale(0.98); }
+
+.btn-primary { background-color: #4CAF50; color: white; }
+.btn-danger { background-color: #d32f2f; color: white; }
+.btn-splash { background-color: #FFC107; color: #000; font-size: 1.5rem; padding: 15px 40px; }
+
+.page-section {
+    display: none;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#splashArea {
+    position: fixed; 
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('imagem_encontro2025.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+#splashArea h1 {
+    font-size: 4em;
+    color: #FFC107;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 20px;
+}
+
+.setup-box {
+    background: #222;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 90%;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#bracketContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 40px;
+    justify-content: flex-start;
+}
+
+.round {
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 240px;
+    flex-shrink: 0;
+}
+
+.match {
+    background: #000;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.match.winner-match { border-color: #FFC107; }
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #222;
+    font-size: 1.1rem;
+}
+
+.win-text { color: #4CAF50; font-weight: bold; }
+
+.team button {
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-finish {
+    width: 100%;
+    margin-top: 5px;
+    background: #444;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 350px;
+    margin-top: 30px;
+    background: #111;
+    padding: 20px;
+}
+
+.podium-place {
+    width: 150px;
+    text-align: center;
+    background: #222;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    border: 2px solid #000;
+}
+
+.podium-place.first { height: 280px; background: #FFD700; color: #000; z-index: 2; }
+.podium-place.second { height: 200px; background: #C0C0C0; color: #000; }
+.podium-place.third { height: 140px; background: #CD7F32; color: #000; }
+
+.medal { font-size: 3.5rem; display: block; margin-bottom: 10px; }
+.name { font-weight: bold; font-size: 1.3rem; padding: 0 5px; word-wrap: break-word; }
+
+body.telao { background: #000; }
+body.telao button:not(#toggleTelao), 
+body.telao .header-nav button,
+body.telao .btn-finish,
+body.telao .team button { display: none !important; }
+
+body.telao .round h3 { font-size: 2.2rem; color: #FFC107; }
+body.telao .team { font-size: 1.8rem; padding: 15px; }
+body.telao .match { margin: 30px 0; border: 2px solid #333; }
