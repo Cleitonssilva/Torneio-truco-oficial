@@ -3,16 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // ======================================================
     // 0. CONFIGURAÇÃO (COLE SUAS CHAVES AQUI)
     // ======================================================
-    const firebaseConfig = {
-        apiKey: "SUA_API_KEY_AQUI", // <--- IMPORTANTE: Coloque sua chave real aqui
-        authDomain: "seu-projeto.firebaseapp.com",
-        databaseURL: "https://seu-projeto-default-rtdb.firebaseio.com",
-        projectId: "seu-projeto",
-        storageBucket: "seu-projeto.appspot.com",
-        messagingSenderId: "...",
-        appId: "..."
-    };
-
+   const firebaseConfig = {
+  apiKey: "AIzaSyD_VAQLAAu4Nqn39xShIXkvDNddvW_4Tds",
+  authDomain: "dba-agrosol.firebaseapp.com",
+  databaseURL: "https://dba-agrosol-default-rtdb.firebaseio.com",
+  projectId: "dba-agrosol",
+  storageBucket: "dba-agrosol.firebasestorage.app",
+  messagingSenderId: "527386709919",
+  appId: "1:527386709919:web:85ead187c16c8519cd37aa",
+  measurementId: "G-KE4R7WNG4V"
+};
     // Inicializa Firebase
     let db, auth;
     let isConnected = false;
