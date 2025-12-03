@@ -43,6 +43,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const bracketContainer = document.getElementById('bracketContainer');
     const adminPanel = document.getElementById('adminArea');
     const backToBracketFromPodium = document.getElementById('backToBracketFromPodium');
+
+    // =============================
+    // CORREÇÃO DO DOWNLOAD DE FOTO
+    // =============================
+    const dlBtn = document.getElementById('downloadPodiumButton');
+    if(dlBtn) {
+        dlBtn.onclick = () => {
+            // 1. Identifica o que vamos "printar" (O container do pódio)
+            const elementToCapture = document.querySelector(".podium-container");
+            
+            // Feedback visual para o usuário não clicar mil vezes
+            const originalText = dlBtn.innerText;
+            dlBtn.innerText = "📸 Gerando...";
+            dlBtn.disabled = true;
+
+            html2canvas(elementToCapture, {
+                useCORS: true,       // Permite carregar imagens externas/locais
+                scale: 2,            // Melhora a qualidade (Alta Resolução)
+                backgroundColor: "#111", // Garante que o fundo saia preto e não transparente
+                logging: false       // Limpa o console
+            }).then(canvas => {
+                // Cria o link de download fake
+                const link = document.createElement('a');
+                link.download = 'podio_agrosol_2025.png';
+                link.href = canvas.toDataURL("image/png");
+                
+                // Truque para funcionar no Firefox e Safari
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Restaura o botão
+                dlBtn.innerText = originalText;
+                dlBtn.disabled = false;
+            }).catch(err => {
+                console.error("Erro ao gerar print:", err);
+                alert("Ocorreu um erro ao gerar a imagem. Tente tirar um Print Screen manual.");
+                dlBtn.innerText = originalText;
+                dlBtn.disabled = false;
+            });
+        };
+    }
     
     // =============================
     // 1. SISTEMA DE LOGIN & MODO ESPECTADOR
@@ -382,4 +424,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
 
