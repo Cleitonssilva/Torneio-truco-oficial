@@ -4,14 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 0. CONFIGURAÇÃO (COLE SUAS CHAVES DO FIREBASE AQUI)
     // ======================================================
     const firebaseConfig = {
-        apiKey: "COLE_SUA_API_KEY_AQUI", // <--- Substitua pelo código do Console do Firebase
-        authDomain: "seu-projeto.firebaseapp.com",
-        databaseURL: "https://seu-projeto-default-rtdb.firebaseio.com",
-        projectId: "seu-projeto",
-        storageBucket: "seu-projeto.appspot.com",
-        messagingSenderId: "...",
-        appId: "..."
-    };
+  apiKey: "AIzaSyD_VAQLAAu4Nqn39xShIXkvDNddvW_4Tds",
+  authDomain: "dba-agrosol.firebaseapp.com",
+  databaseURL: "https://dba-agrosol-default-rtdb.firebaseio.com",
+  projectId: "dba-agrosol",
+  storageBucket: "dba-agrosol.firebasestorage.app",
+  messagingSenderId: "527386709919",
+  appId: "1:527386709919:web:85ead187c16c8519cd37aa",
+  measurementId: "G-KE4R7WNG4V"
+};
 
     // Inicializa Firebase
     let db, auth;
@@ -381,3 +382,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
