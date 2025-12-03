@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torneio de Truco AgroSol 2025</title>
+    <title>Torneio AgroSol 2025</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <section id="splashArea">
     <div class="splash-content">
-        <h1>Torneio de Truco 2025</h1>
+        <h1>Torneio AgroSol 2025</h1>
         <button id="mainActionButton" class="btn-splash">Entrar no Sistema</button>
     </div>
 </section>
@@ -42,14 +42,16 @@
 
     <div class="actions">
         <button id="generateBracketButton" class="btn-primary">Gerar Chaveamento</button>
-        <button onclick="fullReset()" class="btn-danger">Limpar Tudo</button>
+        <button onclick="fullReset()" class="btn-danger admin-only">Limpar Tudo</button>
     </div>
 </section>
 
 <section id="bracketArea" class="page-section">
     <div class="header-nav">
-        <button onclick="fullReset()" class="btn-danger" style="font-size:0.8rem;">🗑️ Reiniciar Torneio</button>
+        <button onclick="fullReset()" class="btn-danger admin-only" style="font-size:0.8rem;">🗑️ Reiniciar Torneio</button>
+        
         <h2>Chaveamento</h2>
+        
         <button id="viewPodiumButton" style="display:none;">🏆 Ver Pódio</button>
     </div>
     
@@ -76,19 +78,18 @@
 
     <div class="podium-actions">
         <button id="backToBracketFromPodium">🔙 Ver Chaves</button>
-        
         <button id="downloadPodiumButton">📸 Baixar Foto</button>
-        <button onclick="fullReset()" class="btn-danger">Novo Jogo</button>
+        <button onclick="fullReset()" class="btn-danger admin-only">Novo Jogo</button>
     </div>
 </section>
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
 
 <script src="script.js"></script>
 </body>
