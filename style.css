@@ -159,4 +159,30 @@ body.telao .team button { display: none !important; }
 
 body.telao .round h3 { font-size: 2.2rem; color: #FFC107; }
 body.telao .team { font-size: 1.8rem; padding: 15px; }
+
 body.telao .match { margin: 30px 0; border: 2px solid #333; }
+
+/* =========================================
+   REGRAS DE SEGURANÇA VISUAL (MODO ESPECTADOR)
+   ========================================= */
+
+/* Esconde botões marcados como 'admin-only' (Reset, Novo Jogo) */
+body.viewer-mode .admin-only {
+    display: none !important;
+}
+
+/* Esconde botões de pontuação (+) dentro das partidas */
+body.viewer-mode .match button:not(.btn-finish) {
+    display: none !important;
+}
+
+/* Esconde botão de finalizar partida */
+body.viewer-mode .btn-finish {
+    display: none !important;
+}
+
+/* Ajusta layout do time quando não tem botões */
+body.viewer-mode .team {
+    justify-content: center;
+    gap: 15px;
+}
